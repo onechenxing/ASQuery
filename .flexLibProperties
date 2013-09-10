@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="cx.asQuery.ASQueryObject"/>
+    <classEntry path="cx.asQuery.$"/>
+    <classEntry path="cx.asQuery.ASQueryConfig"/>
+    <classEntry path="cx.asQuery.ASQueryListenerMap"/>
+    <classEntry path="cx.asQuery.ASQueryHelper"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

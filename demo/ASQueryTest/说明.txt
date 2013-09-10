@@ -1,0 +1,5 @@
+﻿【ASQuery 测试项目】
+
+---------------- 使用 ------------------
+此项目为FlashBuilder项目，导入FlashBuilder使用。
+需要同时导入ASQuery库项目   
