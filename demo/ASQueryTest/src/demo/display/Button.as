@@ -1,8 +1,7 @@
 package demo.display
 {
-	import flash.display.DisplayObject;
-	import flash.display.Shape;
 	import flash.display.SimpleButton;
+	import flash.display.Sprite;
 	import flash.text.TextField;
 	
 	/**
@@ -16,7 +15,7 @@ package demo.display
 		private var overColor:uint = 0xCCCCCC;
 		private var downColor:uint = 0xAAAAAA;
 		private var w:uint = 60;
-		private var h:uint = 30;
+		private var h:uint = 20;
 		
 		public function Button(name:String,label:String) 
 		{
@@ -30,14 +29,13 @@ package demo.display
 		
 		public function dispose():void
 		{
-			trace("释放Button");
+			trace("释放Button：",name);
 		}
 	}
 }
 import flash.display.Sprite;
 import flash.text.TextField;
 import flash.text.TextFieldAutoSize;
-import flash.text.TextFormat;
 	
 class ButtonDisplayState extends Sprite
 {

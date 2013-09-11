@@ -2,8 +2,8 @@ package
 {
 	import cx.asQuery.*;
 	
-	import demo.MapView;
-	import demo.UIView;
+	import demo.test2.MapView;
+	import demo.test2.UIView;
 	import demo.display.Button;
 	
 	import flash.display.Sprite;
@@ -14,6 +14,7 @@ package
 	
 	/**
 	 * ASQuery测试类2
+	 * Demo说明：简单的UI和动画
 	 * @author 翼翔天外
 	 * @E-mail onechenxing@163.com
 	 */

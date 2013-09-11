@@ -1,4 +1,4 @@
-package demo
+package demo.test2
 {
 	import demo.display.Button;
 	

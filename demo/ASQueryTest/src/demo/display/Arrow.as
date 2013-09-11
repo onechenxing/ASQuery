@@ -31,7 +31,7 @@
 		
 		public function dispose():void
 		{
-			trace("释放Arrow");
+			trace("释放Arrow：",name);
 		}
 	}
 }

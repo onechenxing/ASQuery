@@ -25,7 +25,7 @@ package demo.display
 		
 		public function dispose():void
 		{
-			trace("释放Rect");
+			trace("释放Rect：",name);
 		}
 	}
 }

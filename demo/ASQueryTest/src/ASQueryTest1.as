@@ -7,13 +7,14 @@ package
 	import flash.text.TextField;
 	
 	/**
-	 * ASQuery测试类 
+	 * ASQuery测试类 1
+	 * Demo说明：构建两个显示对象，设定基本属性，并让他们可以拖动。
 	 * @author 翼翔天外
 	 * @E-mail onechenxing@163.com
 	 */
-	public class ASQueryTest extends Sprite
+	public class ASQueryTest1 extends Sprite
 	{
-		public function ASQueryTest()
+		public function ASQueryTest1()
 		{
 			//初始化
 			$(this).ready(init);
@@ -31,8 +32,9 @@ package
 			tf.mouseEnabled = false;
 			addChild(tf);
 			
-			//
+			//构建显示对象
 			initDisplay();
+			//测试ASQuery
 			testQuery();
 		}
 		
@@ -51,6 +53,10 @@ package
 			addChild(b);
 		}
 		
+		/**
+		 * 测试ASQuery 
+		 * 
+		 */
 		private function testQuery():void
 		{
 			//通过名字设置多个属性
@@ -70,6 +76,7 @@ package
 					//结束拖动
 					$(event.currentTarget).fun("stopDrag");
 				});
+			//输出程序中的所有Sprite看看
 			trace($(Sprite));
 		}
 	}
