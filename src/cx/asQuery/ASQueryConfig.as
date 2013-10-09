@@ -11,7 +11,7 @@ package cx.asQuery
 		/**
 		 * 版本号 
 		 */
-		public static const version:String = "1.0.0";
+		public static const version:String = "1.0.1";
 		
 		/**
 		 * 设置/获取 舞台

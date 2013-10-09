@@ -3,7 +3,7 @@ package
 	import cx.asQuery.*;
 	
 	import demo.test2.MapView;
-	import demo.test2.UIView;
+	import demo.testCompare.MyView;
 	import demo.display.Button;
 	
 	import flash.display.Sprite;
@@ -40,7 +40,7 @@ package
 		private function initUI():void
 		{
 			addChild(new MapView());
-			addChild(new UIView());
+			addChild(new MyView());
 		}
 		
 		private function doASQuery():void

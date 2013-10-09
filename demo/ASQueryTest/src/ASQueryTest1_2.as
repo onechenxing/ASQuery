@@ -7,7 +7,7 @@ package
 	import flash.text.TextField;
 	
 	/**
-	 * ASQuery测试类1_2 （不使用匿名函数）
+	 * ASQuery测试类1_2 （不使用匿名函数,代码更清晰）
 	 * Demo说明：构建两个显示对象，设定基本属性，并让他们可以拖动。
 	 * @author 翼翔天外
 	 * @E-mail onechenxing@163.com

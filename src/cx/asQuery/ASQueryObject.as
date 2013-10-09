@@ -107,14 +107,7 @@ package cx.asQuery
 				}
 				else
 				{
-					item.addEventListener(Event.ADDED_TO_STAGE,function(e:Event):void
-					{
-						if(item.hasEventListener(Event.ADDED_TO_STAGE))
-						{
-							item.removeEventListener(Event.ADDED_TO_STAGE,arguments.callee);
-						}
-						fun.apply(item);
-					});
+					$(item).bindOnce(Event.ADDED_TO_STAGE,fun);
 				}
 			});
 		}
@@ -241,6 +234,32 @@ package cx.asQuery
 			all(function(item:DisplayObject):void
 			{
 				ASQueryListenerMap.getInstance().remove(item,type,handler);
+			});
+			return this;
+		}
+		
+		/**
+		 * 绑定只执行一次的事件监听 
+		 * @param type
+		 * @param handler
+		 * @return 
+		 * 
+		 */
+		public function bindOnce(type:String,handler:Function):ASQueryObject
+		{
+			all(function(item:DisplayObject):void
+			{
+				ASQueryListenerMap.getInstance().add(item,type,
+					function(event:*):void
+					{
+						$(item).unbind(type,handler);
+						//根据函数参数个数动态调用
+						var numArgs:int = handler.length;
+						if (numArgs == 0) handler();
+						else if (numArgs == 1) handler(event);
+						else handler(event, event.data);
+					},
+					handler);//映射用户函数，如果用户用unbind释放，可以释放掉。
 			});
 			return this;
 		}

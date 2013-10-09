@@ -1,0 +1,6 @@
+2013-9-17:
+1.监听管理器的add方法添加userListener参数，用于解决内部方法包装了用户监听，如果用户要主动释放会无法释放的问题。
+2.添加内部绑定方法__bind，用于针对于userListener的添加。
+3.规范内部使用到的事件监听的地方统一通过bind,bindOnce,unbind或监听管理器来操作，即不直接使用原生监听函数。
+2013.9.12:
+1.添加新方法->绑定只执行一次的事件监听：bindOnce(type:String,handler:Function)
