@@ -1,4 +1,4 @@
-﻿【ASQuery 1.0.1】
+﻿【ASQuery 1.0.2】
 ﻿
 
 ---------------- 目录 ------------------
@@ -82,7 +82,10 @@ API生成文档在doc目录
 >>释放资源：dispose()
 >>设置自己的深度到顶层：setIndexTop()
 >>设置自己的深度到底层：setIndexBottom()
-
+>>设置位置：setPosition(x:Number,y:Number)
+>>改变位置：addPosition(x:Number,y:Number)
+>>设置旋转角度：setRotation(r:Number)
+>>缓动：tween(duration:Number, vars:Object)
 
 ---------------- 代码模版 ------------------
 
@@ -119,7 +122,7 @@ API生成文档在doc目录
 
 ---------------- 后续计划 ----------------
 
-添加缓动动画支持
+添加缓动动画支持 - OK
 优化选择器的性能
 添加更多辅助函数
 添加更多的选择器
