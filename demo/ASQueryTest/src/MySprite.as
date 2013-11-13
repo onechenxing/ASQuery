@@ -3,7 +3,7 @@ package
 	import flash.display.Sprite;
 
 	/**
-	 * 自定义显示对象 
+	 * 自定义显示对象 （正方形）
 	 * @author 翼翔天外
 	 * @E-mail onechenxing@163.com
 	 */

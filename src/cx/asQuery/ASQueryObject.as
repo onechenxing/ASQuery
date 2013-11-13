@@ -1,5 +1,7 @@
 package cx.asQuery
 {
+	import com.greensock.TweenLite;
+	
 	import flash.display.Bitmap;
 	import flash.display.DisplayObject;
 	import flash.display.DisplayObjectContainer;
@@ -422,6 +424,112 @@ package cx.asQuery
 		}
 		
 		/**
+		 * 设置位置 
+		 * @param x
+		 * @param y
+		 * 
+		 */
+		public function setPosition(x:Number,y:Number):ASQueryObject
+		{
+			all(function(item:DisplayObject):void
+			{
+				item.x = x;
+				item.y = y;
+			});
+			return this;
+		}
+		
+		/**
+		 * 改变位置 
+		 * @param x	x位置偏移
+		 * @param y y位置偏移
+		 * 
+		 */
+		public function addPosition(x:Number,y:Number):ASQueryObject
+		{
+			all(function(item:DisplayObject):void
+			{
+				item.x += x;
+				item.y += y;
+			});
+			return this;
+		}
+		
+		/**
+		 * 设置旋转角度
+		 * @param r
+		 * 
+		 */
+		public function setRotation(r:Number):ASQueryObject
+		{
+			all(function(item:DisplayObject):void
+			{
+				item.rotation = r;
+			});
+			return this;
+		}
+		
+		/**
+		 * 设置深度到顶层
+		 * 
+		 */
+		public function setIndexTop():ASQueryObject
+		{
+			all(function(item:DisplayObject):void
+			{
+				item.parent.setChildIndex(item,item.parent.numChildren-1);
+			});
+			return this;
+		}
+		
+		/**
+		 * 设置深度到底层
+		 * @param index
+		 * 
+		 */
+		public function setIndexBottom():ASQueryObject
+		{
+			all(function(item:DisplayObject):void
+			{
+				item.parent.setChildIndex(item,0);
+			});
+			return this;
+		}	
+		
+		/**
+		 * 缓动 
+		 * @param duration	持续时间
+		 * @param vars		缓动参数(参考TweenLite::to()方法的使用)
+		 * 
+		 */
+		public function tween(duration:Number, vars:Object):ASQueryObject
+		{
+			all(function(item:DisplayObject):void
+			{
+				TweenLite.to(item,duration,vars);
+			});
+			return this;
+		}
+		
+		/**
+		 * 输出字符串 
+		 * @return 
+		 * 
+		 */
+		public function toString():String
+		{
+			var itemStr:String = "list:";
+			var num:int = _list.length;
+			for(var i:int = 0; i < num ; i++)
+			{
+				itemStr += _list[i] + ",";
+			}
+			itemStr = itemStr.substr(0,itemStr.length-1);
+			return "[AsQueryObject]\r selector:" + _selector + "\r root:" + _root + "\r " + itemStr;
+		}
+		
+		
+		/**
 		 * 清理所有资源，并释放
 		 * 如果任何子元素有dispose或destroy方法，会自动调用
 		 * 此方法无返回
@@ -467,50 +575,6 @@ package cx.asQuery
 			_list = null;
 			_root = null;
 			_selector = null;
-		}
-		
-		/**
-		 * 设置深度到顶层
-		 * 
-		 */
-		public function setIndexTop():ASQueryObject
-		{
-			all(function(item:DisplayObject):void
-			{
-				item.parent.setChildIndex(item,item.parent.numChildren-1);
-			});
-			return this;
-		}
-		
-		/**
-		 * 设置深度到底层
-		 * @param index
-		 * 
-		 */
-		public function setIndexBottom():ASQueryObject
-		{
-			all(function(item:DisplayObject):void
-			{
-				item.parent.setChildIndex(item,0);
-			});
-			return this;
-		}	
-		
-		/**
-		 * 输出字符串 
-		 * @return 
-		 * 
-		 */
-		public function toString():String
-		{
-			var itemStr:String = "list:";
-			var num:int = _list.length;
-			for(var i:int = 0; i < num ; i++)
-			{
-				itemStr += _list[i] + ",";
-			}
-			itemStr = itemStr.substr(0,itemStr.length-1);
-			return "[AsQueryObject]\r selector:" + _selector + "\r root:" + _root + "\r " + itemStr;
 		}
 	}
 }

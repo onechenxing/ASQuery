@@ -1,3 +1,11 @@
+2013-11-13:
+1.集成TweenLite开源项目,提供缓动动画支持：
+	缓动的使用方法：tween(duration:Number, vars:Object)
+2.添加新的辅助方法：
+	设置位置：setPosition(x:Number,y:Number)
+	改变位置：addPosition(x:Number,y:Number)
+	设置旋转角度：setRotation(r:Number)
+
 2013-9-17:
 1.监听管理器的add方法添加userListener参数，用于解决内部方法包装了用户监听，如果用户要主动释放会无法释放的问题。
 2.添加内部绑定方法__bind，用于针对于userListener的添加。

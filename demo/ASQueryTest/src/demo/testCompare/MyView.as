@@ -24,11 +24,11 @@ package demo.testCompare
 		private function init():void
 		{
 			var offset:int = 10;
-			btn1 = new Button("btnOne","按钮1");
+			btn1 = new Button("btn1","按钮1");
 			btn1.y = offset;
-			btn2 = new Button("btnTwo","按钮2");
+			btn2 = new Button("btn2","按钮2");
 			btn2.y = btn1.y + btn1.height + offset;
-			btn3 = new Button("btnThree","按钮3");
+			btn3 = new Button("btn3","按钮3");
 			btn3.y = btn2.y + btn2.height + offset;
 			addChild(btn1);
 			addChild(btn2);

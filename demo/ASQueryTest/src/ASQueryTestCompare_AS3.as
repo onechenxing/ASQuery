@@ -10,7 +10,7 @@ package
 	
 	/**
 	 * 对比测试 - AS3版本
-	 * 用来对比同样的实现，两种方式的区别。 
+	 * Demo说明：用来对比同样的实现，两种方式的区别。 
 	 * @author 翼翔天外
 	 * @E-mail onechenxing@163.com
 	 * 

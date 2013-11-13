@@ -13,15 +13,14 @@ package
 	
 	
 	/**
-	 * ASQuery测试类2
-	 * Demo说明：简单的UI和动画
+	 * ASQuery测试类 - 简单的UI和Sprite运动
 	 * @author 翼翔天外
 	 * @E-mail onechenxing@163.com
 	 */
 	[SWF(frameRate=60)]
-	public class ASQueryTest2 extends Sprite
+	public class ASQueryTestUIAndSprite extends Sprite
 	{
-		public function ASQueryTest2()
+		public function ASQueryTestUIAndSprite()
 		{
 			$(this).ready(init);
 		}
@@ -32,7 +31,8 @@ package
 		 * 
 		 */
 		protected function init():void
-		{
+		{			
+			ASQueryConfig.stage = stage;//初始化舞台
 			initUI();
 			doASQuery();
 		}
@@ -44,9 +44,7 @@ package
 		}
 		
 		private function doASQuery():void
-		{
-			//设置舞台
-			ASQueryConfig.stage = stage;
+		{			
 			//给所有按钮添加点击事件
 			$(Button).click(buttonClickHandler);
 			//给MapView内的所有Sprite的添加拖动事件

@@ -93,7 +93,7 @@ package cx.asQuery
 			{
 				for(findMapListener in _dic[instance][type])
 				{
-					instance.removeEventListener(type,_dic[instance][findType][findMapListener]);
+					instance.removeEventListener(type,_dic[instance][type][findMapListener]);
 				}
 				delete _dic[instance][type];
 			}

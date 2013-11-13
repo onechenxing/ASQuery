@@ -16,15 +16,14 @@ package
 	import flash.system.System;
 	
 	/**
-	 * ASQuery测试类 3
-	 * Demo说明：多个模块同时使用
+	 * ASQuery测试类 - 多个视图同时使用
 	 * @author 翼翔天外
 	 * @E-mail onechenxing@163.com
 	 */
 	[SWF(width="800",height="600",frameRate="24",backgroundColor="#EFEFEF")]
-	public class ASQueryTest3 extends Sprite
+	public class ASQueryTestMultiView extends Sprite
 	{
-		public function ASQueryTest3()
+		public function ASQueryTestMultiView()
 		{
 			//初始化
 			$(this).ready(init);
@@ -32,8 +31,7 @@ package
 		
 		private function init():void
 		{			
-			//设置舞台
-			ASQueryConfig.stage = stage;
+			ASQueryConfig.stage = stage;//初始化舞台
 			//设置舞台对其和拉伸方式
 			$().attr("align",StageAlign.TOP_LEFT).attr("scaleMode",StageScaleMode.NO_SCALE);
 			//构建显示对象
