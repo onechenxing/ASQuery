@@ -17,6 +17,7 @@ package cx.asQuery
 	 */
 	public function $(selector:* = null,root:DisplayObjectContainer = null,onlyChild:Boolean = false):ASQueryObject
 	{
+		if( typeof(selector)=="string" && selector == ""){ selector = null; }
 		return new ASQueryObject(root == null ? ASQueryConfig.stage : root,selector == null ? ASQueryConfig.stage : selector,onlyChild);
 	}
 }
