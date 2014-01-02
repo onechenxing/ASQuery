@@ -45,25 +45,33 @@ package cx.asQuery
 				this._root = ASQueryObject(selector)._root;
 				this._list = ASQueryObject(selector)._list;
 			}
-			if(selector is String)//名字
+			if(selector is String)//名字字符串
 			{
-				//名字可以用空格拆分
-				var nameList:Array = String(selector).split(" ");
-				var nameIndex:int = 0;
-				var nameNum:int = nameList.length;
-				var childList:Array;
-				for(; nameIndex < nameNum ; nameIndex++)
+				//空字符串，使用舞台
+				if(selector == "")
 				{
-					childList = [];
-					if(onlyChild)
+					_list.push(ASQueryConfig.stage);
+				}
+				else//否则为名字列表
+				{
+					//多个名字用空格拆分
+					var nameList:Array = String(selector).split(" ");
+					var nameIndex:int = 0;
+					var nameNum:int = nameList.length;
+					var childList:Array;
+					for(; nameIndex < nameNum ; nameIndex++)
 					{
-						ASQueryHelper.findChildByName(nameList[nameIndex],_root,childList);
+						childList = [];
+						if(onlyChild)
+						{
+							ASQueryHelper.findChildByName(nameList[nameIndex],_root,childList);
+						}
+						else
+						{
+							ASQueryHelper.findAllChildByName(nameList[nameIndex],_root,childList);
+						}
+						_list = _list.concat(childList);
 					}
-					else
-					{
-						ASQueryHelper.findAllChildByName(nameList[nameIndex],_root,childList);
-					}
-					_list = _list.concat(childList);
 				}
 			}
 			else

@@ -1,3 +1,6 @@
+2014-1-2:
+支持传入空字符串表示为stage查询。by gakaki 提议。
+
 2013-11-13:
 1.集成TweenLite开源项目,提供缓动动画支持：
 	缓动的使用方法：tween(duration:Number, vars:Object)
